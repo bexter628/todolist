@@ -7,17 +7,20 @@ const addItem = () => {
 
     const list = document.getElementById("list");
     const listItem = document.createElement("LI");
+    const p = document.createElement("P");
+    p.setAttribute("id", "text");
 
+    
+
+    p.innerHTML = document.getElementById("input").value;
+    listItem.appendChild(p);
     list.appendChild(listItem);
-
-    listItem.innerHTML = document.getElementById("input").value;
-
     
 
     //remove button
     const removeBtn = document.createElement("input");
 
-    removeBtn.classList.add("material-icons", "remove");
+    removeBtn.classList.add("material-icons", "removeBtn");
 
     removeBtn.setAttribute("type", "button");
     removeBtn.setAttribute("value", "close");
@@ -39,19 +42,20 @@ const addItem = () => {
     completeBtn.classList.add("material-icons", "completeBtn");
 
     completeBtn.addEventListener("click", (e) => {
-      listItem.classList.toggle("complete");
+      p.classList.toggle("complete");
     })
 
 
     // button container
     const btnContainer = document.createElement("div");
+    btnContainer.setAttribute("class", "btnContainer");
 
     btnContainer.appendChild(completeBtn);
     btnContainer.appendChild(removeBtn);
 
     listItem.appendChild(btnContainer);
 
-    
+    document.getElementById("input").value = "";
                                  
   }
   
