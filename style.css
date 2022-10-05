@@ -1,46 +1,76 @@
 body {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
   /*   background: rgb(0,69,71); */
-    background: radial-gradient(circle, rgba(33,13,66,1) 0%, rgba(0,69,71,1) 100%);
-    border: 1px solid white;
+    background: radial-gradient(circle, rgba(0,69,71,1) 0%, rgba(33,13,66,1) 100%);
+    overflow-y: scroll;
   }
   
   #todoList {
+    text-align: center;
     padding: 10px;
     margin: 10px;
-  /*   display: block;
-    margin: 0 auto;
-    width: 360px; */
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .btnContainer {
+    margin-left: 10px;
+    display: flex;
   }
   
   li {
-    background-color: rgba(210, 238, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    /* background-color: rgba(210, 238, 255, 0.1); */
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
     padding: 10px;
+    margin: 2px;
+    /* text-align: left; */
     display: flex;
     justify-content: space-between;
-    align-content: middle;
-    border-radius: 5px;
+    align-items: center;
   }
   #list {
     margin-top: 20px;
   }
+  #input {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: rgba(210, 238, 255, 0.1);
+    color: #ffffff
+
+  }
   
- .complete {
+ .complete:not(.btnContainer) {
     text-decoration: line-through;
     color: grey;
   }
   
-  /* .btnContainer {
-   
-    
-  } */
+  .removeBtn {
+    color: rgba(252,70,107,1);
+    opacity: .7;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .removeBtn:hover {
+    opacity: 1;
+  }
+  .completeBtn {
+    color: green;
+    opacity: .7;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .completeBtn:hover {
+    opacity: 1;
+  }
   .addBtn {
     background: linear-gradient(45deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     border-radius: 30px;
@@ -48,8 +78,10 @@ body {
     color: white;
     padding: 10px 30px;
     cursor: pointer;
+    min-width: 400px;
+    margin: auto;
   }
   .addBtn:hover {
-    background: linear-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: linear-gradient(150deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     
   }
